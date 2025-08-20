@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Search, ShoppingCart, User, Heart, Menu, Phone } from "lucide-react";
+import { Search, Heart, Menu, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
+import { CartSheet } from "@/components/ui/cart-sheet";
+import { AuthSheet } from "@/components/ui/auth-sheet";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,7 +21,7 @@ export const Header = () => {
             <span className="hidden md:block">support@citywood.com</span>
           </div>
           <div className="flex items-center gap-4">
-            <span className="hidden md:block">Free Shipping on Orders $500+</span>
+            <span className="hidden md:block">Free Shipping on Orders ₦200,000+</span>
           </div>
         </div>
       </div>
@@ -58,15 +59,8 @@ export const Header = () => {
             <Button variant="ghost" size="icon" className="hover-lift">
               <Heart className="h-5 w-5" />
             </Button>
-            <Button variant="ghost" size="icon" className="hover-lift relative">
-              <ShoppingCart className="h-5 w-5" />
-              <Badge className="absolute -top-1 -right-1 h-5 w-5 rounded-full p-0 flex items-center justify-center text-xs bg-accent">
-                3
-              </Badge>
-            </Button>
-            <Button variant="ghost" size="icon" className="hover-lift">
-              <User className="h-5 w-5" />
-            </Button>
+            <CartSheet />
+            <AuthSheet />
             <Button
               variant="ghost"
               size="icon"

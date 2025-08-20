@@ -144,12 +144,20 @@ export const Footer = () => {
         {/* Bottom section */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-primary-foreground/80 text-sm">
-            © 2024 Citywood. All rights reserved. | Developed with ❤️ by Lovable
+            © 2025 Citywood. All rights reserved. | Developed with ❤️ by{" "}
+            <a 
+              href="https://wa.me/2348158025887" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-white transition-smooth"
+            >
+              Caleb
+            </a>
           </p>
           <div className="flex items-center gap-4">
             <span className="text-primary-foreground/60 text-sm">Secure payments with:</span>
             <div className="flex gap-2">
-              {["Visa", "Mastercard", "PayPal"].map((payment) => (
+              {["Paystack", "Visa", "Mastercard"].map((payment) => (
                 <div 
                   key={payment}
                   className="bg-white/10 px-3 py-1 rounded text-xs font-medium"

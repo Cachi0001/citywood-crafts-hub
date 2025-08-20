@@ -5,7 +5,7 @@ const features = [
   {
     icon: Truck,
     title: "Nationwide Shipping",
-    description: "Free delivery on orders over $500. Fast, reliable shipping across the country.",
+    description: "Free delivery on orders over ₦200,000. Fast, reliable shipping across the country.",
     color: "text-steel-blue"
   },
   {
