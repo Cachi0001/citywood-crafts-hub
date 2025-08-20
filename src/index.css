@@ -2,41 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Citywood Design System - Premium furniture & tools e-commerce
+All colors MUST be HSL. Rich wood tones, professional blues, warm browns.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Base colors - warm, inviting backgrounds */
+    --background: 35 15% 98%;
+    --foreground: 25 25% 8%;
 
+    /* Card system - elegant elevated surfaces */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 25 25% 8%;
 
+    /* Popover system */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 25 25% 8%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Deep woodsy blue for trust and craftsmanship */
+    --primary: 210 65% 25%;
+    --primary-foreground: 35 15% 98%;
+    --primary-glow: 210 65% 35%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Warm wood brown */
+    --secondary: 25 45% 85%;
+    --secondary-foreground: 25 25% 8%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted - Soft neutral tones */
+    --muted: 25 20% 94%;
+    --muted-foreground: 25 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Rich wood accent */
+    --accent: 35 65% 65%;
+    --accent-foreground: 25 25% 8%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Destructive - Elegant red for warnings */
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 35 15% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Borders and inputs - subtle and refined */
+    --border: 25 20% 88%;
+    --input: 25 20% 92%;
+    --ring: 210 65% 25%;
 
-    --radius: 0.5rem;
+    /* Design tokens */
+    --radius: 0.75rem;
+
+    /* Citywood brand colors */
+    --wood-primary: 25 65% 45%;
+    --wood-secondary: 35 55% 55%;
+    --wood-light: 35 35% 85%;
+    --steel-blue: 210 75% 30%;
+    --steel-light: 210 45% 85%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--wood-primary)), hsl(var(--steel-blue)));
+    --gradient-wood: linear-gradient(45deg, hsl(var(--wood-primary)), hsl(var(--wood-secondary)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+
+    /* Shadows - elegant depth */
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.2);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
+    --shadow-wood: 0 8px 25px -8px hsl(var(--wood-primary) / 0.25);
+
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +132,53 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer components {
+  /* Hero components */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .wood-gradient {
+    background: var(--gradient-wood);
+  }
+  
+  .cinematic-text {
+    @apply text-transparent bg-clip-text;
+    background: var(--gradient-wood);
+  }
+  
+  /* Elegant shadows */
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .shadow-wood {
+    box-shadow: var(--shadow-wood);
+  }
+  
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+  
+  /* Hover effects */
+  .hover-lift {
+    @apply transition-smooth hover:scale-105 hover:shadow-glow;
+  }
+  
+  .hover-wood {
+    @apply transition-smooth hover:shadow-wood;
   }
 }
